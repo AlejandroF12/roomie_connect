@@ -64,7 +64,8 @@ export const profileService = {
       .from('avatars')
       .getPublicUrl(filePath)
 
-    const avatarUrl = urlData.publicUrl
+    // Añadir cache-buster para forzar recarga cuando se actualiza el avatar
+    const avatarUrl = `${urlData.publicUrl}?t=${Date.now()}`
 
     await profileService.updateProfile(userId, { avatar_url: avatarUrl } as UpdateProfileInput & { avatar_url: string })
 
