@@ -69,7 +69,7 @@ export function useLogout() {
     mutationFn: () => authService.logout(),
     onSuccess: () => {
       queryClient.clear()
-      navigate('/login')
+      navigate('/')
     },
   })
 }

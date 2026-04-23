@@ -70,4 +70,9 @@ export const profileService = {
 
     return avatarUrl
   },
+
+  async deleteAccount(): Promise<void> {
+    const { error } = await supabase.rpc('delete_my_account')
+    if (error) throw new Error('No se pudo eliminar la cuenta.')
+  },
 }

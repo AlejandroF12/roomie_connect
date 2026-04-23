@@ -62,3 +62,17 @@ export function useUploadAvatar() {
     },
   })
 }
+
+/**
+ * Elimina la cuenta del usuario autenticado.
+ */
+export function useDeleteAccount() {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: () => profileService.deleteAccount(),
+    onSuccess: () => {
+      queryClient.clear()
+    },
+  })
+}

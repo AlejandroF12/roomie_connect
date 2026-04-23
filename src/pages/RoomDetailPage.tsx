@@ -12,7 +12,7 @@ import { RoomImageGallery } from '@/components/rooms/RoomImageGallery'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { Modal } from '@/components/ui/Modal'
-import { Spinner } from '@/components/ui/Spinner'
+import { RoomDetailSkeleton } from '@/components/ui/Skeleton'
 import { Layout } from '@/components/layout/Layout'
 import type { RoomStatus } from '@/types'
 
@@ -105,7 +105,7 @@ export function RoomDetailPage() {
 
   if (isLoading) return (
     <Layout>
-      <div className="flex min-h-[60vh] items-center justify-center"><Spinner size="lg" /></div>
+      <RoomDetailSkeleton />
     </Layout>
   )
 
